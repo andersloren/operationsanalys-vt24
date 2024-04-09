@@ -434,14 +434,86 @@ Gelateria bör köpa glass efter följande modell:
 | ---------- | ---------- | ---------- | ------------- |
 | grossist 1 | 400        | 400        | 200           |
 | grossist 2 | 100        | 400        | 0             |
-
-|
-| totalt | 500 | 800 | 200 |
+|            |            |            |               |
+| totalt     | 500        | 800        | 200           |
 
 ## Uppgift 2
 
 ### Kod
 
 ```
+!
+
+Laboration 1, uppgift 2
+
+!- Beslutsvariabler --
+
+Xj 	där,
+
+	j : 1 = bröd 1, 2 = jordnötsmör, 3 = jordgubbsylt, 4 = kex, 5 = mjölk, 6 = juice;
+
+!- Bivillkor --
+
+Antalet enheter mat som barnen äter kan inte vara negativa;
+
+[BREAD]		X1 >= 0;
+[PEANUT_BUTTER]	X2 >= 0;
+[JAM]			X3 >= 0;
+[CRACKERS]		X4 >= 0;
+[MILK]		X5 >= 0;
+[JUICE]		X6 >= 0;
+
+! Näringsintaget har vissa restriktioner;
+
+[CALORIES_MIN]	70*X1 + 100*X2 + 50*X3 + 60*X4 + 150*X5 + 100*X6 >= 400;
+[CALORIES_MAX]	70*X1 + 100*X2 + 50*X3 + 60*X4 + 150*X5 + 100*X6 <= 600;
+[FAT]			10*X1 + 75*X2 + 20*X4 + 70*X5 <= 0.3*(70*X1 + 100*X2 + 50*X3 + 60*X4 + 150*X5 + 100*X6); ! Andelen fett i vänsterled, totala mängden mat i vänsterled multiplicerat med restriktionen ;
+[VITAMIN_C]		3*X3 + 2*X5 + 120*X6 >= 60;
+[PROTEIN]		3*X1 + 4*X2 + 1*X4 + 8*X5 + 1*X6 >= 12;
+
+! Av naturliga skäl äter alla barn 2 skivor bröd ;
+
+[TWO_SKIVOR_BREAD] X1 = 2;
+
+! Mängden jordnötsmör ska vara dubbelt så stor som mängden jordgubbsylt;
+
+[PEANUTBUTTER_TWICE_AS_MUCH_AS_JAM] x2 >= 2*X3;
+
+! Varje barn ska dricka minst ett glas vätska ;
+
+[AT_LEAST_ONE_CUP_OF_LIQUID] X5 + X6 >= 1;
+
+!- Målfunktion --;
+
+[OBJECT_FUNTION] MIN = 5*X1 + 4*X2 + 7*X3 + 8*X4 + 15*X5 + 35*X6;
 
 ```
+
+### Lösningsrapport
+
+| Variable | Value     | Reduced Cost |
+| -------- | --------- | ------------ |
+| X1       | 2.000000  | 0.000000     |
+| X2       | 0.5747508 | 0.000000     |
+| X3       | 0.2873754 | 0.000000     |
+| X4       | 1.039452  | 0.000000     |
+| X5       | 0.5157807 | 0.000000     |
+| X6       | 0.4842193 | 0.000000     |
+
+| Row                               | Slack or Surplus | Dual Price     |
+| --------------------------------- | ---------------- | -------------- |
+| BREAD                             | 2.000000         | 0.000000       |
+| PEANUT_BUTTER                     | 0.5747508        | 0.000000       |
+| JAM                               | 0.2873754        | 0.000000       |
+| CRACKERS                          | 1.039452         | 0.000000       |
+| MILK                              | 0.5157807        | 0.000000       |
+| JUICE                             | 0.4842193        | 0.000000       |
+| CALORIES_MIN                      | 0.000000         | -0.1426495     |
+| CALORIES_MAX                      | 200.0000         | 0.000000       |
+| FAT                               | 0.000000         | 0.2794850      |
+| VITAMIN_C                         | 0.000000         | -0.9966777E-01 |
+| PROTEIN                           | 1.948920         | 0.000000       |
+| TWO_SKIVOR_BREAD                  | 0.000000         | 8.059801       |
+| PEANUTBUTTER_TWICE_AS_MUCH_AS_JAM | 0.000000         | -2.311877      |
+| AT_LEAST_ONE_CUP_OF_LIQUID        | 0.000000         | -0.3903654     |
+| OBJECT_FUNTION                    | 47.31063         | -1.000000      |
