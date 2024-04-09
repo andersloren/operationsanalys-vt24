@@ -218,17 +218,17 @@ Ijt , antal lagerhållna hyllor där
 
 ! Lagerbalansvillkor : (Ingående lager + införskaffade enheter - utgående lager = efterfrågan);
 
-[BALANCE_S_MONTH_1] Is0 + Xs1 - Is1 = 700;
-[BALANCE_S_MONTH_2] Is1 + Xs2 - Is2 = 800;
-[BALANCE_S_MONTH_3] Is2 + Xs3 - Is3 = 600;
+[BALANCE_S1] Is0 + Xs1 - Is1 = 700;
+[BALANCE_S2] Is1 + Xs2 - Is2 = 800;
+[BALANCE_S3] Is2 + Xs3 - Is3 = 600;
 
-[BALANCE_L_MONTH_1] Il0 + Xl1 - Il1 = 400;
-[BALANCE_L_MONTH_2] Il1 + Xl2 - Il2 = 500;
-[BALANCE_L_MONTH_3] Il2 + Xl3 - Il3 = 700;
+[BALANCE_L1] Il0 + Xl1 - Il1 = 400;
+[BALANCE_L2] Il1 + Xl2 - Il2 = 500;
+[BALANCE_L3] Il2 + Xl3 - Il3 = 700;
 
-[BALANCE_P_MONTH_1] Ip0 + Xp1 - Ip1 = 100;
-[BALANCE_P_MONTH_2] Ip1 + Xp2 - Ip2 = 300;
-[BALANCE_P_MONTH_3] Ip2 + Xp3 - Ip3 = 400;
+[BALANCE_P1] Ip0 + Xp1 - Ip1 = 100;
+[BALANCE_P2] Ip1 + Xp2 - Ip2 = 300;
+[BALANCE_P3] Ip2 + Xp3 - Ip3 = 400;
 
 ! Respektive bearbetningsfas har sina respektive resursbegränsningar;
 
@@ -240,13 +240,13 @@ Ijt , antal lagerhållna hyllor där
 [FORMING_MONTH_2] 0.25*Xs2 + 0.5*Xl2 + 0.45*Xp2 <= 500;
 [FORMING_MONTH_3] 0.25*Xs3 + 0.5*Xl3 + 0.45*Xp3 <= 400;
 
-[ASSEMBLING_S_MONTH_1] 0.3*Xs1 <= 540;
-[ASSEMBLING_S_MONTH_2] 0.3*Xs2 <= 500;
-[ASSEMBLING_S_MONTH_3] 0.3*Xs3 <= 450;
+[ASSEMBLING_S1] 0.3*Xs1 <= 540;
+[ASSEMBLING_S2] 0.3*Xs2 <= 500;
+[ASSEMBLING_S3] 0.3*Xs3 <= 450;
 
-[ASSEMBLING_P_MONTH_1] 0.6*Xll + 0.3*Xp1 <= 440;
-[ASSEMBLING_P_MONTH_2] 0.6*Xl2 + 0.5*Xp2 <= 400;
-[ASSEMBLING_P_MONTH_3] 0.6*Xl3 + 0.5*Xp3 <= 400;
+[ASSEMBLING_P1] 0.6*Xll + 0.3*Xp1 <= 440;
+[ASSEMBLING_P2] 0.6*Xl2 + 0.5*Xp2 <= 400;
+[ASSEMBLING_P3] 0.6*Xl3 + 0.5*Xp3 <= 400;
 
 !- Målfunktion -- ;
 
@@ -325,3 +325,16 @@ Ijt , antal lagerhållna hyllor där
 | ASSEMBLING_P_MONTH_2 | 38.88889         | 0.000000   |
 | ASSEMBLING_P_MONTH_3 | 233.3333         | 0.000000   |
 | OBJECT_FUNCTION      | 48527.78         | 1.000000   |
+
+### Analys
+
+<p>Av alla bivillkor är det formning månad 3 som har störst potential att höja målfunktionens värde.</p>
+
+## Uppgift 1
+
+### Kod
+
+```
+
+
+```
