@@ -27,13 +27,13 @@ Xjt 	där,
 
 ! Det producerade fodret kan inte ha en negativ kvantitet;
 
-[BASIC_FEED]		X1 >= 0;
+[BASIC_FEED]	X1 >= 0;
 [STANDARD_FEED]	X2 >= 0;
 [SPECIAL_FEED]	X3 >= 0;
 
 ! Det ställs följande krav på näringsinnehållet i fodret;
 
-[CARBS]		0.5*X1 + 0.7*X2 + 0.3*X3 >= 200;
+[CARBS]		    0.5*X1 + 0.7*X2 + 0.3*X3 >= 200;
 [PROTEIN]		0.1*X1 + 0.2*X2 + 0.05*X3 >= 80;
 [FAT]			0.02*X1 + 0.02*X2 + 0.08*X3 >= 30;
 [MINERALS_MAX]	0.008*X1 + 0.001*X2 >= 0.4;
@@ -244,7 +244,7 @@ Ijt , antal lagerhållna hyllor där
 [ASSEMBLING_S2] 0.3*Xs2 <= 500;
 [ASSEMBLING_S3] 0.3*Xs3 <= 450;
 
-[ASSEMBLING_P1] 0.6*Xll + 0.3*Xp1 <= 440;
+[ASSEMBLING_P1] 0.6*Xl1 + 0.3*Xp1 <= 440;
 [ASSEMBLING_P2] 0.6*Xl2 + 0.5*Xp2 <= 400;
 [ASSEMBLING_P3] 0.6*Xl3 + 0.5*Xp3 <= 400;
 
@@ -253,88 +253,195 @@ Ijt , antal lagerhållna hyllor där
 [OBJECT_FUNCTION] MAX = 100*Is3 + 170*Il3 + 160*Ip3 - 20*(Is1 + Il1 + Ip1) - 35*(Is2 + Il2 + Ip2);
 ```
 
-### Känslighetsrapport
+### Lösningsrapport
 
 | Variable | Value    | Reduced Cost |
 | -------- | -------- | ------------ |
-| XS1      | 0.000000 | 8.888889     |
-| XL1      | 1100.000 | 0.000000     |
-| XP1      | 111.1111 | 0.000000     |
-| XS2      | 700.0000 | 0.000000     |
-| XL2      | 0.000000 | 2.222222     |
-| XP2      | 722.2222 | 0.000000     |
-| XS3      | 1000.000 | 0.000000     |
-| XL3      | 0.000000 | 3.333333     |
-| XP3      | 333.3333 | 0.000000     |
+| XS1      | 29.62963 | 0.000000     |
+| XL1      | 168.5185 | 0.000000     |
+| XP1      | 1129.630 | 0.000000     |
+| XS2      | 670.3704 | 0.000000     |
+| XL2      | 664.8148 | 0.000000     |
+| XP2      | 0.000000 | 6.000000     |
+| XS3      | 1066.667 | 0.000000     |
+| XL3      | 266.6667 | 0.000000     |
+| XP3      | 0.000000 | 4.444444     |
 | IS0      | 800.0000 | 0.000000     |
-| IS1      | 100.0000 | 0.000000     |
-| IS2      | 0.000000 | 4.444444     |
-| IS3      | 400.0000 | 0.000000     |
+| IS1      | 129.6296 | 0.000000     |
+| IS2      | 0.000000 | 7.777778     |
+| IS3      | 466.6667 | 0.000000     |
 | IL0      | 500.0000 | 0.000000     |
-| IL1      | 1200.000 | 0.000000     |
-| IL2      | 700.0000 | 0.000000     |
-| IL3      | 0.000000 | 1.666667     |
+| IL1      | 268.5185 | 0.000000     |
+| IL2      | 433.3333 | 0.000000     |
+| IL3      | 0.000000 | 10.55556     |
 | IP0      | 150.0000 | 0.000000     |
-| IP1      | 161.1111 | 0.000000     |
-| IP2      | 583.3333 | 0.000000     |
-| IP3      | 516.6667 | 0.000000     |
-| XLL      | 0.000000 | 0.000000     |
+| IP1      | 1179.630 | 0.000000     |
+| IP2      | 879.6296 | 0.000000     |
+| IP3      | 479.6296 | 0.000000     |
 
-| Row                  | Slack or Surplus | Dual Price |
-| -------------------- | ---------------- | ---------- |
-| PRODUCTION_S1        | 0.000000         | 0.000000   |
-| PRODUCTION_L1        | 1100.000         | 0.000000   |
-| PRODUCTION_P1        | 111.1111         | 0.000000   |
-| PRODUCTION_S2        | 700.0000         | 0.000000   |
-| PRODUCTION_L2        | 0.000000         | 0.000000   |
-| PRODUCTION_P2        | 722.2222         | 0.000000   |
-| PRODUCTION_S3        | 1000.000         | 0.000000   |
-| PRODUCTION_L3        | 0.000000         | 0.000000   |
-| PRODUCTION_P3        | 333.3333         | 0.000000   |
-| INV_S0               | 0.000000         | 49.44444   |
-| INV_S1               | 100.0000         | 0.000000   |
-| INV_S2               | 0.000000         | 0.000000   |
-| INV_S3               | 400.0000         | 0.000000   |
-| INV_I0               | 0.000000         | 116.6667   |
-| INV_I1               | 1200.000         | 0.000000   |
-| INV_I2               | 700.0000         | 0.000000   |
-| INV_I3               | 0.000000         | 0.000000   |
-| INV_P0               | 0.000000         | 105.0000   |
-| INV_P1               | 161.1111         | 0.000000   |
-| INV_P2               | 583.3333         | 0.000000   |
-| INV_P3               | 516.6667         | 0.000000   |
-| BALANCE_S_MONTH_1    | 0.000000         | -49.44444  |
-| BALANCE_S_MONTH_2    | 0.000000         | -69.44444  |
-| BALANCE_S_MONTH_3    | 0.000000         | -100.0000  |
-| BALANCE_L_MONTH_1    | 0.000000         | -116.6667  |
-| BALANCE_L_MONTH_2    | 0.000000         | -136.6667  |
-| BALANCE_L_MONTH_3    | 0.000000         | -171.6667  |
-| BALANCE_P_MONTH_1    | 0.000000         | -105.0000  |
-| BALANCE_P_MONTH_2    | 0.000000         | -125.0000  |
-| BALANCE_P_MONTH_3    | 0.000000         | -160.0000  |
-| PUNCHING_MONTH_1     | 236.6667         | 0.000000   |
-| PUNCHING_MONTH_2     | 73.33333         | 0.000000   |
-| PUNCHING_MONTH_3     | 0.000000         | 83.33333   |
-| FORMING_MONTH_1      | 0.000000         | 233.3333   |
-| FORMING_MONTH_2      | 0.000000         | 277.7778   |
-| FORMING_MONTH_3      | 0.000000         | 300.0000   |
-| ASSEMBLING_S_MONTH_1 | 540.0000         | 0.000000   |
-| ASSEMBLING_S_MONTH_2 | 290.0000         | 0.000000   |
-| ASSEMBLING_S_MONTH_3 | 150.0000         | 0.000000   |
-| ASSEMBLING_P_MONTH_1 | 406.6667         | 0.000000   |
-| ASSEMBLING_P_MONTH_2 | 38.88889         | 0.000000   |
-| ASSEMBLING_P_MONTH_3 | 233.3333         | 0.000000   |
-| OBJECT_FUNCTION      | 48527.78         | 1.000000   |
+| Row              | Slack or Surplus | Dual Price |
+| ---------------- | ---------------- | ---------- |
+| PRODUCTION_S1    | 29.62963         | 0.000000   |
+| PRODUCTION_L1    | 168.5185         | 0.000000   |
+| PRODUCTION_P1    | 1129.630         | 0.000000   |
+| PRODUCTION_S2    | 670.3704         | 0.000000   |
+| PRODUCTION_L2    | 664.8148         | 0.000000   |
+| PRODUCTION_P2    | 0.000000         | 0.000000   |
+| PRODUCTION_S3    | 1066.667         | 0.000000   |
+| PRODUCTION_L3    | 266.6667         | 0.000000   |
+| PRODUCTION_P3    | 0.000000         | 0.000000   |
+| INV_S0           | 0.000000         | 52.77778   |
+| INV_S1           | 129.6296         | 0.000000   |
+| INV_S2           | 0.000000         | 0.000000   |
+| INV_S3           | 466.6667         | 0.000000   |
+| INV_I0           | 0.000000         | 125.5556   |
+| INV_I1           | 268.5185         | 0.000000   |
+| INV_I2           | 433.3333         | 0.000000   |
+| INV_I3           | 0.000000         | 0.000000   |
+| INV_P0           | 0.000000         | 105.0000   |
+| INV_P1           | 1179.630         | 0.000000   |
+| INV_P2           | 879.6296         | 0.000000   |
+| INV_P3           | 479.6296         | 0.000000   |
+| BALANCE_S1       | 0.000000         | -52.77778  |
+| BALANCE_S2       | 0.000000         | -72.77778  |
+| BALANCE_S3       | 0.000000         | -100.0000  |
+| BALANCE_L1       | 0.000000         | -125.5556  |
+| BALANCE_L2       | 0.000000         | -145.5556  |
+| BALANCE_L3       | 0.000000         | -180.5556  |
+| BALANCE_P1       | 0.000000         | -105.0000  |
+| BALANCE_P2       | 0.000000         | -125.0000  |
+| BALANCE_P3       | 0.000000         | -160.0000  |
+| PUNCHING_MONTH_1 | 201.6667         | 0.000000   |
+| PUNCHING_MONTH_2 | 99.44444         | 0.000000   |
+| PUNCHING_MONTH_3 | 0.000000         | 64.81481   |
+| FORMING_MONTH_1  | 0.000000         | 211.1111   |
+| FORMING_MONTH_2  | 0.000000         | 291.1111   |
+| FORMING_MONTH_3  | 0.000000         | 322.2222   |
+| ASSEMBLING_S1    | 531.1111         | 0.000000   |
+| ASSEMBLING_S2    | 298.8889         | 0.000000   |
+| ASSEMBLING_S3    | 130.0000         | 0.000000   |
+| ASSEMBLING_P1    | 0.000000         | 33.33333   |
+| ASSEMBLING_P2    | 1.111111         | 0.000000   |
+| ASSEMBLING_P3    | 240.0000         | 0.000000   |
+| OBJECT_FUNCTION  | 45898.15         | 1.000000   |
 
 ### Analys
 
 <p>Av alla bivillkor är det formning månad 3 som har störst potential att höja målfunktionens värde.</p>
+<p><strong>Värt att notera är att variablerna borde ha varit heltal.</strong></p>
 
 ## Uppgift 1
 
 ### Kod
 
 ```
+!
 
+Laboration 1, uppgift 1
+
+!- Beslutsvariabler --
+
+Xjt 	där,
+
+	j : 1 = grossist 1, 2 = grossist 2
+	t : månad 1,2,3;
+
+!- Bivillkor --
+
+! Lager kan inte vara negativt;
+
+[STARTING_INVENTORY]		I0 = 0;
+[INVENTORY_END_OF_MONTH_1]	I1 >= 0;
+[INVENTORY_END_OF_MONTH_2]	I2 >= 0;
+[INVENTORY_END_OF_MONTH_3]	I3 >= 0;
+
+! Antalet köpta lådor från återförsäljare kan inte vara negativa;
+
+[WHOLESALER_1_MONTH_1] X11 >= 0;
+[WHOLESALER_1_MONTH_2] X12 >= 0;
+[WHOLESALER_1_MONTH_3] X13 >= 0;
+[WHOLESALER_2_MONTH_1] X21 >= 0;
+[WHOLESALER_2_MONTH_2] X22 >= 0;
+[WHOLESALER_2_MONTH_3] X23 >= 0;
+
+! Lagerbalansvillkor : (Ingående lager + införskaffade enheter - utgående lager = efterfrågan);
+
+[BALANCE_MONTH_1] I0 + X11 + X21 - I1 = 500; ! Ingående lager är 0;
+[BALANCE_MONTH_2] I1 + X12 + X22 - I2 = 600;
+[BALANCE_MONTH_3] I2 + X13 + X23 - I3 = 400;
+
+! Återförsaljarna kan sälja max 400 lådor per månad;
+
+[WHOLESALER_1_MONTH_1_MAX] X11 <= 400;
+[WHOLESALER_1_MONTH_2_MAX] X12 <= 400;
+[WHOLESALER_1_MONTH_3_MAX] X13 <= 400;
+
+[WHOLESALER_2_MONTH_1_MAX] X21 <= 400;
+[WHOLESALER_2_MONTH_2_MAX] X22 <= 400;
+[WHOLESALER_2_MONTH_3_MAX] X23 <= 400;
+
+!- Målfunktion --;
+
+[OBJECT_FUNCTION] MIN = 1000*X11 + 1100*X12 + 1200*X13 + 1150*X21 + 1080*X22 + 1250*X23 + 50*(I1 + I2); ! Sista termen är kostnaden för antalet lagerhållna lådor per månad
+
+
+
+```
+
+## Lösningsrapport
+
+| Variable | Value    | Reduced Cost |
+| -------- | -------- | ------------ |
+| I0       | 0.000000 | 0.000000     |
+| I1       | 0.000000 | 50.00000     |
+| I2       | 200.0000 | 0.000000     |
+| I3       | 0.000000 | 1200.000     |
+| X11      | 400.0000 | 0.000000     |
+| X12      | 400.0000 | 0.000000     |
+| X13      | 200.0000 | 0.000000     |
+| X21      | 100.0000 | 0.000000     |
+| X22      | 400.0000 | 0.000000     |
+| X23      | 0.000000 | 50.00000     |
+
+| Row                      | Slack or Surplus | Dual Price |
+| ------------------------ | ---------------- | ---------- |
+| STARTING_INVENTORY       | 0.000000         | 1150.000   |
+| INVENTORY_END_OF_MONTH_1 | 0.000000         | 0.000000   |
+| INVENTORY_END_OF_MONTH_2 | 200.0000         | 0.000000   |
+| INVENTORY_END_OF_MONTH_3 | 0.000000         | 0.000000   |
+| WHOLESALER_1_MONTH_1     | 400.0000         | 0.000000   |
+| WHOLESALER_1_MONTH_2     | 400.0000         | 0.000000   |
+| WHOLESALER_1_MONTH_3     | 200.0000         | 0.000000   |
+| WHOLESALER_2_MONTH_1     | 100.0000         | 0.000000   |
+| WHOLESALER_2_MONTH_2     | 400.0000         | 0.000000   |
+| WHOLESALER_2_MONTH_3     | 0.000000         | 0.000000   |
+| BALANCE_MONTH_1          | 0.000000         | -1150.000  |
+| BALANCE_MONTH_2          | 0.000000         | -1150.000  |
+| BALANCE_MONTH_3          | 0.000000         | -1200.000  |
+| WHOLESALER_1_MONTH_1_MAX | 0.000000         | 150.0000   |
+| WHOLESALER_1_MONTH_2_MAX | 0.000000         | 50.00000   |
+| WHOLESALER_1_MONTH_3_MAX | 200.0000         | 0.000000   |
+| WHOLESALER_2_MONTH_1_MAX | 300.0000         | 0.000000   |
+| WHOLESALER_2_MONTH_2_MAX | 0.000000         | 70.00000   |
+| WHOLESALER_2_MONTH_3_MAX | 400.0000         | 0.000000   |
+| OBJECT_FUNCTION          | 1637000.         | -1.000000  |
+
+### Analys
+
+Gelateria bör köpa glass efter följande modell:
+
+|            | lådor juni | lådor juli | lådor augusti |
+| ---------- | ---------- | ---------- | ------------- |
+| grossist 1 | 400        | 400        | 200           |
+| grossist 2 | 100        | 400        | 0             |
+
+|
+| totalt | 500 | 800 | 200 |
+
+## Uppgift 2
+
+### Kod
+
+```
 
 ```
