@@ -7,7 +7,9 @@ Student-ID: S170512
 
 <p>All text som står utanför kommentarer är på engelska. Det verkar som att LINGO har problem med å, ä och ö. </p>
 <p>Om du föredrar att köra koderna så har jag laddat upp dem på GitHub: </p>
-https://github.com/andersloren/operationsanalys-vt24
+```https://github.com/andersloren/operationsanalys-vt24```
+
+<p>Där finns även detta dokument i *.md som gör sig bättre än pdf-dokumentet jag skickade in.</p>
 
 ## Förberedelseuppgift 1
 
