@@ -517,3 +517,16 @@ Antalet enheter mat som barnen äter kan inte vara negativa;
 | PEANUTBUTTER_TWICE_AS_MUCH_AS_JAM | 0.000000         | -2.311877      |
 | AT_LEAST_ONE_CUP_OF_LIQUID        | 0.000000         | -0.3903654     |
 | OBJECT_FUNTION                    | 47.31063         | -1.000000      |
+
+### Analys
+
+Liam och Lisa bör använda följande modell när de ska kombinera ett mellanmål till ett barn. Mängderna är något avrundade för att vara realistiska.
+
+| livsmedel    | mängd  |
+| ------------ | ------ |
+| brödskivor   | 2 st   |
+| jordnötssmör | ½ msk  |
+| jordgubbsylt | ⅓ msk  |
+| kex          | 1 st   |
+| mjölk        | ½ glas |
+| juice        | ½ glas |
