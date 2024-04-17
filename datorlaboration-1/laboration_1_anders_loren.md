@@ -449,7 +449,7 @@ Gelateria bör köpa glass efter följande modell:
 | grossist 1 | 400        | 400        | 200           |
 | grossist 2 | 100        | 400        | 0             |
 |            |            |            |               |
-| totalt     | 500        | 800        | 200           |
+| **totalt** | **500**    | **800**    | **200**       |
 
 ## Uppgift 2
 
