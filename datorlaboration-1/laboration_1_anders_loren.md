@@ -70,9 +70,15 @@ Xjt 	där,
 
 #### Recuded Cost
 
-Den optimala lösningen ger att följande mängd foder och fodertyp ska användas: ≈169 kg basfoder, ≈248 kg standardfoder och ≈271 kr specialfoder.
+<p>Den optimala lösningen ger att följande mängd foder och fodertyp  ska användas är följande:</p>
 
-Lösningen ger ett större värde än 0 på samtliga variabler vilket innebär att reduced cost är 0 för samtliga variabler.
+| fodertyp      | antal kg |
+| ------------- | -------- |
+| basfoder      | 169      |
+| standardfoder | 248      |
+| specialfoder  | 271      |
+
+<p>Lösningen ger ett större värde än 0 på samtliga variabler vilket innebär att reduced cost är 0 för samtliga variabler.</p>
 
 #### Slack or Suprplus samt Dual Price
 
