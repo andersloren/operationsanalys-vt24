@@ -329,6 +329,18 @@ Ijt , antal lagerhållna hyllor där
 
 ### Analys
 
+<p>Jag var inte helt säker på hur jag skulle få till heltal, så beräkningarna är gjorde med decimaltal.</p>
+<p>Avrundar vi till heltal så ska man producera och lagerhålla följande antal produkter:<p>
+
+| Månad                 | 0   | 1    | 2   | 3    |
+| --------------------- | --- | ---- | --- | ---- |
+| Produkt S, tillverkn. | -   | 30   | 670 | 1067 |
+| Produkt L, tillverkn. | -   | 169  | 665 | 267  |
+| Produkt P, tillverkn. | -   | 1130 | 0   | 0    |
+| Produkt S, lagring    | 800 | 130  | 0   | 467  |
+| Produkt L, lagring    | 500 | 269  | 433 | 0    |
+| Produkt P, lagring    | 150 | 1180 | 880 | 480  |
+
 <p>Av alla bivillkor är det formning månad 3 som har störst potential att höja målfunktionens värde.</p>
 <p><strong>Värt att notera är att variablerna borde ha varit heltal.</strong></p>
 
