@@ -70,9 +70,15 @@ Xjt 	där,
 
 #### Recuded Cost
 
-Den optimala lösningen ger att följande mängd foder och fodertyp ska användas: ≈169 kg basfoder, ≈248 kg standardfoder och ≈271 kr specialfoder.
+<p>Den optimala lösningen ger att följande mängd foder och fodertyp  ska användas är följande:</p>
 
-Lösningen ger ett större värde än 0 på samtliga variabler vilket innebär att reduced cost är 0 för samtliga variabler.
+| fodertyp      | antal kg |
+| ------------- | -------- |
+| basfoder      | 169      |
+| standardfoder | 248      |
+| specialfoder  | 271      |
+
+<p>Lösningen ger ett större värde än 0 på samtliga variabler vilket innebär att reduced cost är 0 för samtliga variabler.</p>
 
 #### Slack or Suprplus samt Dual Price
 
@@ -329,6 +335,18 @@ Ijt , antal lagerhållna hyllor där
 
 ### Analys
 
+<p>Jag var inte helt säker på hur jag skulle få till heltal, så beräkningarna är gjorde med decimaltal.</p>
+<p>Avrundar vi till heltal så ska man producera och lagerhålla följande antal produkter:<p>
+
+| Månad                 | 0   | 1    | 2   | 3    |
+| --------------------- | --- | ---- | --- | ---- |
+| Produkt S, tillverkn. | -   | 30   | 670 | 1067 |
+| Produkt L, tillverkn. | -   | 169  | 665 | 267  |
+| Produkt P, tillverkn. | -   | 1130 | 0   | 0    |
+| Produkt S, lagring    | 800 | 130  | 0   | 467  |
+| Produkt L, lagring    | 500 | 269  | 433 | 0    |
+| Produkt P, lagring    | 150 | 1180 | 880 | 480  |
+
 <p>Av alla bivillkor är det formning månad 3 som har störst potential att höja målfunktionens värde.</p>
 <p><strong>Värt att notera är att variablerna borde ha varit heltal.</strong></p>
 
@@ -437,7 +455,7 @@ Gelateria bör köpa glass efter följande modell:
 | grossist 1 | 400        | 400        | 200           |
 | grossist 2 | 100        | 400        | 0             |
 |            |            |            |               |
-| totalt     | 500        | 800        | 200           |
+| **totalt** | **500**    | **800**    | **200**       |
 
 ## Uppgift 2
 
