@@ -3,9 +3,9 @@
 <p><strong>Namn: </strong>Anders Lorén</p>
 <p><strong>Personnummer: </strong>19840102-5534</p>
 <p><strong>Laborationsgrupp: </strong>38</p>
-<p><strong>GitHub: </strong>https://github.com/andersloren/operationsanalys-vt24/tree/master/datorlaboration-2</p>
+<p><strong>GitHub: </strong>https://github.com/andersloren/operationsanalys-vt24/tree/master/datorlaboration-3</p>
 
-## Uppft 1 (jämnt nummer)
+## Uppft 1
 
 ### Tabell
 
@@ -32,22 +32,7 @@
 ! Laboration 3, Uppgift 1;
 
 ! Beslutsvariabler;
-
-t1>=0;
-t2>=0;
-t3>=0;
-t4>=0;
-t5>=0;
-t6>=0;
-t7>=0;
-t8>=0;
-t9>=0;
-t10>=0;
-t11>=0;
-t12>=0;
-t13>=0;
-t14>=0;
-t15>=0;
+! Ej hitskrivna för att minska mängden kod.
 
 ! Bivillkor;
 
@@ -129,7 +114,9 @@ xb + xe + xh  >= 1;
 max = 18*xa + 21*Xb + 18*xc + 30*xd + 24*xe + 20*xf + 20*xg + 30*xh + 23*xi;
 ```
 
-Optimallösning
+### Svar:
+
+Optimallösning:
 
 | Investeringar |
 | ------------- |
