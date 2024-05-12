@@ -3,6 +3,7 @@
 <p><strong>Namn: </strong>Anders Lorén</p>
 <p><strong>Personnummer: </strong>19840102-5534</p>
 <p><strong>Laborationsgrupp: </strong>38</p>
+<p><strong>GitHub: </strong>https://github.com/andersloren/operationsanalys-vt24/tree/master/datorlaboration-2</p>
 
 ## Uppgift 1
 
@@ -89,7 +90,7 @@ Vi kan därför ta DUAL PRICE för SUPPLY_COLOR_A minus med kostnaden per liter 
 
 `(60.74074 - 25) * 10 = 357.4`
 
-Högsta tillåtna höjning av restriktionen för färg B är 47.14286 utan att skuggpriset ändras.
+Högsta tillåtna höjning av restriktionen för färg B är 11.25 utan att skuggpriset ändras.
 
 Motsvarande uträkning för andra alternativet blir:
 
@@ -103,7 +104,7 @@ Alternativ 1 är alltså det bästa alternativet.
 
 #### Svar:
 
-Ja! Maskin 1 har 40 minuter SLACK efter att produktionen är klar.
+Maskin 1 har 40 minuter SLACK efter att produktionen är klar.
 
 #### <p>c)</p>
 
@@ -133,9 +134,7 @@ förändras optimallösningen?</em>
 
 #### Svar:
 
-Eftersom REDUCED COST för produkt 3 är oändlig så kan täckningsbidraget sänkas oändligt lågt utan att optimallösningen ändras.
-
-<p>Anledningen till att 10 enheter av produkt 3 trots allt tillverkas är för att det femte bivillkoret kräver så.</p>
+Eftersom REDUCED COST för produkt 3 är oändlig så kan täckningsbidraget sänkas oändligt lågt utan att optimallösningen ändras. Anledningen till att 10 enheter av produkt 3 tillverkas är för att det femte bivillkoret kräver så.
 
 #### <p>e)</p>
 
@@ -339,12 +338,6 @@ MIN = Z1 + Z2 + Z3 + Z4 + Z5 + Z6;
 | COMBUSTION_COSTS_FACILITY_E  | 0.000000    | INFINITY           | 120000.0           |
 | CITY_A_FACILITY_D            | 0.000000    | 0.000000           | INFINITY           |
 
-### Kommentar
+### Analys
 
-Några slutsatser man kan dra av analysen är följande:
-
-- CITY_C_WASTE har ett DUAL PRICE på -1852. Detta innebär att 1 ton mindre avfall från Stad C ger en total kostnadsminskning på 1852, vilket är den största minskningen om avfallet minskar med 1 ton från någon av städerna. Detta är sant för upp till 100 ton minskat avfall, eftersom CITY_C_WASTE har en ALLOWED DECREASE på just 100.
-
-- FACILITY_E_CAPACITY har ett DUAL PRICE på 138. Om kapaciteten för Anläggning E ökar med 1 så minskar den totala kostnaden med 138. Detta är sant för upp till 50 ton ökad kapacitet, vilket framgår av ALLOWED INCREASE för FACILITY_E_CAPACITY som är just 50.
-
-- Ingen av stationerna har ett DUAL PRICE skiljt från 0. Detta känns lite konstigt eftersom det är olika dyrt att köra till olika stationer från anläggningarna. Min gissning är att LINGO inte kan räkna ut detta då kostnadsbiten för körningarna till de olika stationerna utgörs av ekvationerna som saknar konstanter i högerled.
+Enligt min beräkning kostar avfallshanteringen 1 255 800 kr.
