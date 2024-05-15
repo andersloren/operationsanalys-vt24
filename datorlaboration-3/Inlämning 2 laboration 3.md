@@ -1,5 +1,9 @@
 # Laboration 3, på plats
 
+Namn: Anders Lorén
+Personnummer: 19840102-5534
+Grupp: 38
+
 ## Uppgift 1
 
 | Beslutsvariabler som antar 1 |
